@@ -33,8 +33,7 @@ Below are your lab requirements in this format. Try and think up what the featur
 ### August 22, 2020
 
 1. Created a constructor function that created an object associated with each product, and had the following properties:
-   Name of the product
-   File path of image
+   (Name of the product and File path of image)
 1. Created an algorithm that will randomly generate three unique product images from the images directory and display them side-by-side-by-side in the browser window.
 1. Attached an event listener to the section of the HTML page where the images are going to be displayed.
 1. Once the user ‘clicks’ a product, generated three new products for the user to pick from.

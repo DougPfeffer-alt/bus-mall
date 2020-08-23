@@ -25,7 +25,11 @@ h2 {
   color: #666;
 }
 
-img {
+header img {
+  border: none;
+}
+
+section img {
 /* display: inline-block; */
 text-align: center;
 border: 5px solid black;

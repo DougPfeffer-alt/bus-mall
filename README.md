@@ -42,7 +42,7 @@ Below are your lab requirements in this format. Try and think up what the featur
 1. Kept the number of rounds in a variable to allow the number to be easily changed for debugging and testing purposes.
 1. Created a property attached to the constructor function itself that keeps track of all the products that are currently being considered.
 1. Display the list of all the products followed by the votes received and number of times seen for each. Example: Banana Slicer had 3 votes and was shown 5 times
-1. Also added a bud GIF to the landing page for added fun
+1. Also added a bus GIF to the landing page for added fun
 
 ### AUgust 23, 2020
 

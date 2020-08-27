@@ -43,6 +43,8 @@ new Product('USB', './img/usb.gif');
 new Product('Water Can', './img/water-can.jpg');
 new Product('Wine Glass', './img/wine-glass.jpg');
 
+
+// render product
 function renderProduct() {
   var prodOne = productArray[randomNumber(productArray.length)];
   var prodTwo = productArray[randomNumber(productArray.length)];
@@ -77,6 +79,139 @@ prodElOne.addEventListener('click', eventHandler);
 prodElTwo.addEventListener('click', eventHandler);
 prodElThree.addEventListener('click', eventHandler);
 
+function renderChart() {
+  var clicksArray = [];
+  var viewedArray = [];
+  var nameArray = [];
+
+  for (var i = 0; i < productArray.length; i++) {
+    clicksArray.push(productArray[i].clicked);
+    viewedArray.push(productArray[i].viewed);
+    nameArray.push(productArray[i].name);
+  }
+  console.log(productArray, clicksArray);
+
+  var chartObject = {
+    type: 'bar',
+    data: {
+      labels: nameArray,
+      datasets: [{
+        label: '# of Votes',
+        data: clicksArray,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(0, 255, 234, 0.2)',
+          'rgba(0, 255, 106, 0.2)',
+          'rgba(191, 255, 0, 0.2)',
+          'rgba(255, 195, 0, 0.2)',
+          'rgba(255, 81, 0, 0.2)',
+          'rgba(255, 0, 145, 0.2)',
+          'rgba(195, 0, 255, 0.2)',
+          'rgba(64, 0, 255, 0.2)',
+          'rgba(0, 76, 255, 0.2)',
+          'rgba(0, 191, 255, 0.2)',
+          'rgba(0, 255, 251, 0.2)',
+          'rgba(0, 255, 157, 0.2)',
+          'rgba(0, 255, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(0, 255, 234, 1)',
+          'rgba(0, 255, 106, 1)',
+          'rgba(191, 255, 0, 1)',
+          'rgba(255, 195, 0, 1)',
+          'rgba(255, 81, 0, 1)',
+          'rgba(255, 0, 145, 1)',
+          'rgba(195, 0, 255, 1)',
+          'rgba(64, 0, 255, 1)',
+          'rgba(0, 76, 255, 1)',
+          'rgba(0, 191, 255, 1)',
+          'rgba(0, 255, 251, 1)',
+          'rgba(0, 255, 157, 1)',
+          'rgba(0, 255, 64, 1)'
+        ],
+        hoverBackgroundColor: 'orange',
+        borderWidth: 1
+      }, {
+        label: '# of Views',
+        data: viewedArray,
+        backgroundColor: [
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(54, 162, 235, 0.2)',
+          'rgba(255, 206, 86, 0.2)',
+          'rgba(75, 192, 192, 0.2)',
+          'rgba(153, 102, 255, 0.2)',
+          'rgba(255, 159, 64, 0.2)',
+          'rgba(255, 99, 132, 0.2)',
+          'rgba(0, 255, 234, 0.2)',
+          'rgba(0, 255, 106, 0.2)',
+          'rgba(191, 255, 0, 0.2)',
+          'rgba(255, 195, 0, 0.2)',
+          'rgba(255, 81, 0, 0.2)',
+          'rgba(255, 0, 145, 0.2)',
+          'rgba(195, 0, 255, 0.2)',
+          'rgba(64, 0, 255, 0.2)',
+          'rgba(0, 76, 255, 0.2)',
+          'rgba(0, 191, 255, 0.2)',
+          'rgba(0, 255, 251, 0.2)',
+          'rgba(0, 255, 157, 0.2)',
+          'rgba(0, 255, 64, 0.2)'
+        ],
+        borderColor: [
+          'rgba(255, 99, 132, 1)',
+          'rgba(54, 162, 235, 1)',
+          'rgba(255, 206, 86, 1)',
+          'rgba(75, 192, 192, 1)',
+          'rgba(153, 102, 255, 1)',
+          'rgba(255, 159, 64, 1)',
+          'rgba(255, 99, 132, 1)',
+          'rgba(0, 255, 234, 1)',
+          'rgba(0, 255, 106, 1)',
+          'rgba(191, 255, 0, 1)',
+          'rgba(255, 195, 0, 1)',
+          'rgba(255, 81, 0, 1)',
+          'rgba(255, 0, 145, 1)',
+          'rgba(195, 0, 255, 1)',
+          'rgba(64, 0, 255, 1)',
+          'rgba(0, 76, 255, 1)',
+          'rgba(0, 191, 255, 1)',
+          'rgba(0, 255, 251, 1)',
+          'rgba(0, 255, 157, 1)',
+          'rgba(0, 255, 64, 1)'
+        ],
+        hoverBackgroundColor: 'blue',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        yAxes: [{
+          ticks: {
+            beginAtZero: true
+          }
+        }]
+      },
+      responsive: false,
+    }
+  };
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+
+  var myChart = new Chart(ctx, chartObject); //eslint-disable-line
+}
+
 function eventHandler(e) {
   // console.log(e);
   console.log(e.target.alt);
@@ -92,6 +227,8 @@ function eventHandler(e) {
     prodElOne.removeEventListener('click', eventHandler);
     prodElTwo.removeEventListener('click', eventHandler);
     prodElThree.removeEventListener('click', eventHandler);
+    console.log(productArray);
+    renderChart();
     finalScore();
   }
 }

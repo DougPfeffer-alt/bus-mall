@@ -42,4 +42,18 @@ Below are your lab requirements in this format. Try and think up what the featur
 1. Kept the number of rounds in a variable to allow the number to be easily changed for debugging and testing purposes.
 1. Created a property attached to the constructor function itself that keeps track of all the products that are currently being considered.
 1. Display the list of all the products followed by the votes received and number of times seen for each. Example: Banana Slicer had 3 votes and was shown 5 times
-1. Also added a bud GIF to the landing page for added fun
+1. Also added a bus GIF to the landing page for added fun
+
+### August 23, 2020
+
+1. Added a piece outling the "WHY" behind the project.
+
+### August 26, 2020
+
+1. Updated the algorithm to randomly generate three unique product images from the images directory.
+1. Updated the algorithm so that new products are generated, confirming that these products are not duplicates from the immediate previous set.
+1. Added an additional property to the constructor function that tracks the number of times the product has been shown.
+1. Updated this new property every time the product is shown as one of the three options on the screen for the viewer to choose.
+1. Using ChartJS (imported from CDN), displayed the vote totals and the number of times a product was viewed in a bar chart format. 
+1. Placed the bar chart in the section located beneath the three product images
+1. Ensured that the bar chart only appeas after all voting data has been collected.

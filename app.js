@@ -66,19 +66,6 @@ function renderProduct() {
   var prodTwo = productArray[renderArray[1]];
   var prodThree = productArray[renderArray[2]];
 
-  // var prodOne = productArray[randomNumber(productArray.length)];
-  // var prodTwo = productArray[randomNumber(productArray.length)];
-  // var prodThree = productArray[randomNumber(productArray.length)];
-
-  // while (prodOne === prodTwo) {
-  //   prodTwo = productArray[randomNumber(productArray.length)];
-  // }
-  // while (prodOne === prodThree) {
-  //   prodThree = productArray[randomNumber(productArray.length)];
-  // }
-  // while (prodTwo === prodThree) {
-  //   prodThree = productArray[randomNumber(productArray.length)];
-  // }
 
   prodElOne.src = prodOne.src;
   prodElTwo.src = prodTwo.src;

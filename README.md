@@ -57,3 +57,7 @@ Below are your lab requirements in this format. Try and think up what the featur
 1. Using ChartJS (imported from CDN), displayed the vote totals and the number of times a product was viewed in a bar chart format. 
 1. Placed the bar chart in the section located beneath the three product images
 1. Ensured that the bar chart only appeas after all voting data has been collected.
+
+### August 27, 2020
+
+1. Added some additional styling to the site, particularly around the chart. Centered it and applied some background color.

@@ -1,6 +1,7 @@
 'use strict';
 
 var productArray = [];
+var renderArray = [];
 var prodElOne = document.getElementById('product-one');
 var prodElTwo = document.getElementById('product-two');
 var prodElThree = document.getElementById('product-three');
@@ -43,22 +44,41 @@ new Product('USB', './img/usb.gif');
 new Product('Water Can', './img/water-can.jpg');
 new Product('Wine Glass', './img/wine-glass.jpg');
 
+function createRenderArray() {
+  while (renderArray.length > 3) {
+    renderArray.pop();
+  }
+  while (renderArray.length < 6) {
+    var i = randomNumber(productArray.length);
+    while (renderArray.includes(i)) {
+      i = randomNumber(productArray.length);
+    }
+    renderArray.unshift(i);
+    console.log(renderArray);
+  }
+}
 
 // render product
 function renderProduct() {
-  var prodOne = productArray[randomNumber(productArray.length)];
-  var prodTwo = productArray[randomNumber(productArray.length)];
-  var prodThree = productArray[randomNumber(productArray.length)];
+  createRenderArray();
 
-  while (prodOne === prodTwo) {
-    prodTwo = productArray[randomNumber(productArray.length)];
-  }
-  while (prodOne === prodThree) {
-    prodThree = productArray[randomNumber(productArray.length)];
-  }
-  while (prodTwo === prodThree) {
-    prodThree = productArray[randomNumber(productArray.length)];
-  }
+  var prodOne = productArray[renderArray[0]];
+  var prodTwo = productArray[renderArray[1]];
+  var prodThree = productArray[renderArray[2]];
+
+  // var prodOne = productArray[randomNumber(productArray.length)];
+  // var prodTwo = productArray[randomNumber(productArray.length)];
+  // var prodThree = productArray[randomNumber(productArray.length)];
+
+  // while (prodOne === prodTwo) {
+  //   prodTwo = productArray[randomNumber(productArray.length)];
+  // }
+  // while (prodOne === prodThree) {
+  //   prodThree = productArray[randomNumber(productArray.length)];
+  // }
+  // while (prodTwo === prodThree) {
+  //   prodThree = productArray[randomNumber(productArray.length)];
+  // }
 
   prodElOne.src = prodOne.src;
   prodElTwo.src = prodTwo.src;
@@ -99,7 +119,7 @@ function renderChart() {
         label: '# of Votes',
         data: clicksArray,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 165, 0, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
@@ -121,7 +141,7 @@ function renderChart() {
           'rgba(0, 255, 64, 0.2)'
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
+          'rgba(255, 165, 0, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',
@@ -148,7 +168,7 @@ function renderChart() {
         label: '# of Views',
         data: viewedArray,
         backgroundColor: [
-          'rgba(255, 99, 132, 0.2)',
+          'rgba(255, 165, 0, 0.2)',
           'rgba(54, 162, 235, 0.2)',
           'rgba(255, 206, 86, 0.2)',
           'rgba(75, 192, 192, 0.2)',
@@ -170,7 +190,7 @@ function renderChart() {
           'rgba(0, 255, 64, 0.2)'
         ],
         borderColor: [
-          'rgba(255, 99, 132, 1)',
+          'rgba(255, 165, 0, 1)',
           'rgba(54, 162, 235, 1)',
           'rgba(255, 206, 86, 1)',
           'rgba(75, 192, 192, 1)',

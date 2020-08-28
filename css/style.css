@@ -43,8 +43,10 @@ border: 5px solid black;
 }
 
 canvas {
-  width: 1400px;
+  width: 1600px;
   float: center;
+  margin: 0 auto;
 }
+
 
 

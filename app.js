@@ -21,28 +21,33 @@ function Product(name, src) {
   this.name = name;
   productArray.push(this);
 }
-
-// Products
-new Product('R2D2 Bag', './img/bag.jpg');
-new Product('Banana Cutter', './img/banana.jpg');
-new Product('Bathroom iPad', './img/bathroom.jpg');
-new Product('Rain Boots', './img/boots.jpg');
-new Product('Breakfast', './img/breakfast.jpg');
-new Product('Meatball Gum', './img/bubblegum.jpg');
-new Product('Chair', './img/chair.jpg');
-new Product('Sea Demon', './img/cthulhu.jpg');
-new Product('Dog-Duck', './img/dog-duck.jpg');
-new Product('Dragon Meat', './img/dragon.jpg');
-new Product('Pen', './img/pen.jpg');
-new Product('Pet Sweep', './img/pet-sweep.jpg');
-new Product('Scissors', './img/scissors.jpg');
-new Product('Shark Bag', './img/shark.jpg');
-new Product('Sweep', './img/sweep.png');
-new Product('Tauntaun', './img/tauntaun.jpg');
-new Product('Unicorn', './img/unicorn.jpg');
-new Product('USB', './img/usb.gif');
-new Product('Water Can', './img/water-can.jpg');
-new Product('Wine Glass', './img/wine-glass.jpg');
+// local storage
+var retrievedProducts = localStorage.getItem('savedProducts');
+if (retrievedProducts) {
+  productArray = JSON.parse(retrievedProducts);
+} else {
+  // Products
+  new Product('R2D2 Bag', './img/bag.jpg');
+  new Product('Banana Cutter', './img/banana.jpg');
+  new Product('Bathroom iPad', './img/bathroom.jpg');
+  new Product('Rain Boots', './img/boots.jpg');
+  new Product('Breakfast', './img/breakfast.jpg');
+  new Product('Meatball Gum', './img/bubblegum.jpg');
+  new Product('Chair', './img/chair.jpg');
+  new Product('Sea Demon', './img/cthulhu.jpg');
+  new Product('Dog-Duck', './img/dog-duck.jpg');
+  new Product('Dragon Meat', './img/dragon.jpg');
+  new Product('Pen', './img/pen.jpg');
+  new Product('Pet Sweep', './img/pet-sweep.jpg');
+  new Product('Scissors', './img/scissors.jpg');
+  new Product('Shark Bag', './img/shark.jpg');
+  new Product('Sweep', './img/sweep.png');
+  new Product('Tauntaun', './img/tauntaun.jpg');
+  new Product('Unicorn', './img/unicorn.jpg');
+  new Product('USB', './img/usb.gif');
+  new Product('Water Can', './img/water-can.jpg');
+  new Product('Wine Glass', './img/wine-glass.jpg');
+}
 
 function createRenderArray() {
   while (renderArray.length > 3) {
@@ -234,7 +239,11 @@ function eventHandler(e) {
     prodElOne.removeEventListener('click', eventHandler);
     prodElTwo.removeEventListener('click', eventHandler);
     prodElThree.removeEventListener('click', eventHandler);
-    console.log(productArray);
+    console.log('!!!!!!!!!!!!!!!!!!!!', productArray);
+    // local data
+    var stringifiedProducts = JSON.stringify(productArray);
+    localStorage.setItem('savedProducts', stringifiedProducts);
+    console.log(stringifiedProducts);
     renderChart();
     finalScore();
   }

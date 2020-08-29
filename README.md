@@ -61,3 +61,9 @@ Below are your lab requirements in this format. Try and think up what the featur
 ### August 27, 2020
 
 1. Added some additional styling to the site, particularly around the chart. Centered it and applied some background color.
+
+### August 29, 2020
+
+1. Implemented local storage into the current application
+1. Made sure the data persisted across both browser refreshes and resets
+

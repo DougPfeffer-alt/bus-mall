@@ -67,3 +67,7 @@ Below are your lab requirements in this format. Try and think up what the featur
 1. Implemented local storage into the current application
 1. Made sure the data persisted across both browser refreshes and resets
 
+### September 1, 2020
+
+1. Code Reviewed
+

@@ -71,3 +71,7 @@ Below are your lab requirements in this format. Try and think up what the featur
 
 1. Code Reviewed
 
+### September 3, 2020
+
+1. Deploy and Final Submission
+
